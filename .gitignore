@@ -1,0 +1,7 @@
+src/todoist_tools/config.ini
+src/todoist_tools/todoist.txt
+src/todoist_tools/todoist.json
+src/todoist_tools/todoist.html
+src/todoist_tools.egg-info
+__pycache__
+*.pyc
