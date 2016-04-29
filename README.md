@@ -20,18 +20,14 @@ Requirements
 Tested with Python 3.5
 
 Install
+=======
 
 First create and activate a virtualenv:
 
     virtualenv -p <path-to-python> todoist
-    git clone git@github.com:sylvainb/todoist-tools.git
-    cd todoist-tools
+    git clone git@github.com:sylvainb/todoist_tools.git
+    cd todoist_tools
     pip install -e .
-
-Configure your Todoist credentials (username and password):
-
-    cp src/todoist_tools/config.ini.sample src/todoist_tools/config.ini
-    vi src/todoist_tools/config.ini
 
 How to : Export projects
 ========================
@@ -39,16 +35,28 @@ How to : Export projects
 With the command line
 ---------------------
 
+Configure your Todoist credentials (username and password):
+
+    cd todoist_tools
+    cp src/todoist_tools/config.ini.sample src/todoist_tools/config.ini
+    vi src/todoist_tools/config.ini
+
+Then:
+
     cd src/todoist_tools
-    python export_my_projects.py --help
-    python export_my_projects.py --dirpath=/tmp --format=txt
-    python export_my_projects.py --dirpath=/tmp --format=json
-    python export_my_projects.py -d=/tmp -f=html
+    python projects.py --help
+    python projects.py --dirpath=/tmp --format=txt
+    python projects.py --dirpath=/tmp --format=json
+    python projects.py -d=/tmp -f=html
 
 With the Python interpreter
 ---------------------------
-TODO ython src/todoist_tools/export_my_projects.py
 
+    from todoist_tools.projects import ProjectsExport
+    export = ProjectsExport('todoist_email', 'todoist_password')
+    export.to_text('./todoist.txt')
+    export.to_json('./todoist.json')
+    export.to_html('./todoist.html')
 
 Credits
 =======
@@ -58,9 +66,9 @@ Sylvain Boureliou [sylvainb] - [Github](https://github.com/sylvainb) - [Website]
 Source code
 ===========
 
-[Source code](<https://github.com/sylvainb/todoist-tools>) is hosted on Github.
+[Source code](<https://github.com/sylvainb/todoist_tools>) is hosted on Github.
 
 How to contribute and submit a patch ?
 ======================================
 
-[Source code](<https://github.com/sylvainb/todoist-tools>) and an [issue tracker](<https://github.com/sylvainb/todoist-tools/issues>) is hosted on Github.
+[Source code](<https://github.com/sylvainb/todoist_tools>) and an [issue tracker](<https://github.com/sylvainb/todoist_tools/issues>) is hosted on Github.

@@ -12,7 +12,7 @@ description = \
 long_description = open("README.md").read() + "\n" \
     + open(os.path.join("docs", "HISTORY.md")).read()
 
-setup(name='todoist-tools',
+setup(name='todoist_tools',
       version=version,
       description=description,
       long_description=long_description,
@@ -26,7 +26,7 @@ setup(name='todoist-tools',
       keywords='python todoist',
       author='Sylvain Boureliou [sylvainb]',
       author_email='sylvain.boureliou@gmail.com',
-      url='https://github.com/sylvainb/todoist-tools',
+      url='https://github.com/sylvainb/todoist_tools',
       license='gpl',
       packages=find_packages('src'),
       package_dir={'': 'src'},
